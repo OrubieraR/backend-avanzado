@@ -1,13 +1,16 @@
-<% include _header %>
+<%- include ('_header') %>
 
-  <!-- 
+<!-- 
     Visor de Markdown
     http://strapdownjs.com/
   -->
-  <xmp theme="united" style="display:none;">
+<xmp theme="united" style="display: none"
+>
     <%- readme %>
-  </xmp>
+  </xmp
+>
 
-  <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+<a href="/anuncios">Ver el listado de anuncios</a>
 
-<% include _footer %>
+<%- include ('_footer') %>
