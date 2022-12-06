@@ -55,5 +55,5 @@ async function initUsuarios() {
       password: 1234,
     },
   ]);
-  console.log(`Creados ${inserted.deletedCount} usuarios.`);
+  console.log(`Creados ${inserted.length} usuarios.`);
 }
