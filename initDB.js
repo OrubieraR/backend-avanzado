@@ -1,5 +1,8 @@
 "use strict";
 
+// Cargar variables de entorno al crear un archivo .env en el multidioma con el módulo dotenv.
+// require('dotenv').config();
+
 const { askUser } = require("./lib/utils");
 const { mongoose, connectMongoose, Anuncio, Usuario } = require("./models");
 
