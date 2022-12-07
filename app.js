@@ -44,6 +44,7 @@ app.use("/anuncios", require("./routes/anuncios"));
 
 // Pasando estilos de controladores.
 app.get("/login", loginController.index);
+app.post("/login", loginController.post);
 app.get("/privado", privadoController.index);
 
 /**
