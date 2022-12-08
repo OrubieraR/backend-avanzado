@@ -6,8 +6,10 @@ const path = require("path");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
+const session = require("express-session");
 
 const { isAPI } = require("./lib/utils");
+const sessionAuth = require("./lib/sessionAuthMiddleware");
 const LoginController = require("./routes/loginController");
 const PrivadoController = require("./routes/privadoController");
 require("./models"); // Connect DB & register models
@@ -39,13 +41,23 @@ app.use(express.static(path.join(__dirname, "public")));
 const loginController = new LoginController();
 const privadoController = new PrivadoController();
 
+// Middleware de sesiones.
+app.use(
+  session({
+    name: "nodeapp-session",
+    secret: "q%CxlZ:SS`Wve~MkH/E>",
+    saveUninitialized: true,
+    resave: false,
+    cookie: { maxAge: 1000 * 60 * 60 * 24 * 2 }, //Expira a los 2 días de inactividad.
+  })
+);
 app.use("/", require("./routes/index"));
 app.use("/anuncios", require("./routes/anuncios"));
 
 // Pasando estilos de controladores.
 app.get("/login", loginController.index);
 app.post("/login", loginController.post);
-app.get("/privado", privadoController.index);
+app.get("/privado", sessionAuth, privadoController.index);
 
 /**
  * API v1 routes

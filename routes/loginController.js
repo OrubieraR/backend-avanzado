@@ -28,7 +28,11 @@ class LoginController {
         return;
       }
 
-      // Si lo encuentra y la contraseña coincide ===> Redirección a la zona privada.
+      // Si lo encuentra y la contraseña coincide.
+      // Apuntar en la sessión de usuario (en la memoria del servidor) que es un usuario logado. Se creará una cookie con el identificador de la sesión.
+      req.session.usuarioLogado = usuario._id;
+
+      // ===> Redirección a la zona privada.
       res.redirect("/privado");
     } catch (err) {
       next(err);
