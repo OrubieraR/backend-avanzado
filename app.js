@@ -7,11 +7,13 @@ const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const session = require("express-session");
+const mongoStore = require("connect-mongo");
 
 const { isAPI } = require("./lib/utils");
 const sessionAuth = require("./lib/sessionAuthMiddleware");
 const LoginController = require("./routes/loginController");
 const PrivadoController = require("./routes/privadoController");
+const MongoStore = require("connect-mongo");
 require("./models"); // Connect DB & register models
 
 const app = express();
@@ -35,9 +37,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-/**
- * Website routes
- */
 const loginController = new LoginController();
 const privadoController = new PrivadoController();
 
@@ -49,14 +48,29 @@ app.use(
     saveUninitialized: true,
     resave: false,
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 2 }, //Expira a los 2 días de inactividad.
+    store: MongoStore.create({
+      // Añadir la variable del .ENV cuando esté.
+      mongoUrl: "mongodb://localhost/nodepop",
+    }),
   })
 );
+
+// Para que las vistas puedan acceder con sus variables locales a la sesión, se usa el siguiente middelware.
+app.use((req, res, next) => {
+  res.locals.session = req.session;
+  next();
+});
+
+/**
+ * Website routes
+ */
 app.use("/", require("./routes/index"));
 app.use("/anuncios", require("./routes/anuncios"));
 
 // Pasando estilos de controladores.
 app.get("/login", loginController.index);
 app.post("/login", loginController.post);
+app.get("/logout", loginController.logout);
 app.get("/privado", sessionAuth, privadoController.index);
 
 /**
