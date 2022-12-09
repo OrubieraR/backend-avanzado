@@ -11,6 +11,7 @@ const mongoStore = require("connect-mongo");
 
 const { isAPI } = require("./lib/utils");
 const sessionAuth = require("./lib/sessionAuthMiddleware");
+const jwtAuthMiddleware = require("./lib/jwtAuthMiddleware");
 const LoginController = require("./routes/loginController");
 const PrivadoController = require("./routes/privadoController");
 const MongoStore = require("connect-mongo");
@@ -76,7 +77,12 @@ app.get("/privado", sessionAuth, privadoController.index);
 /**
  * API v1 routes
  */
-app.use("/apiv1/anuncios", require("./routes/apiv1/anuncios"));
+app.use(
+  "/apiv1/anuncios",
+  jwtAuthMiddleware,
+  require("./routes/apiv1/anuncios")
+);
+app.use("/apiv1/login", loginController.postApi);
 
 /**
  * Error handlers
