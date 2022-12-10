@@ -14,6 +14,13 @@ Api for the iOS/Android apps.
 
 Review lib/connectMongoose.js to set database configuration
 
+Copy .env.example to .env
+
+```
+sh
+cp .env.example .env
+```
+
 ### Init database
 
     npm run initDB
@@ -103,3 +110,7 @@ Return the list of available tags for the resource anuncios.
         "mobile"
       ]
     }
+
+```
+
+```

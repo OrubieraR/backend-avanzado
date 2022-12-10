@@ -8,6 +8,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const mongoStore = require("connect-mongo");
+const i18n = require("./lib/i18nConfigure");
 
 const { isAPI } = require("./lib/utils");
 const sessionAuth = require("./lib/sessionAuthMiddleware");
@@ -15,6 +16,7 @@ const jwtAuthMiddleware = require("./lib/jwtAuthMiddleware");
 const LoginController = require("./routes/loginController");
 const PrivadoController = require("./routes/privadoController");
 const MongoStore = require("connect-mongo");
+const { title } = require("process");
 require("./models"); // Connect DB & register models
 
 const app = express();
@@ -37,6 +39,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+// Setup i18n
+app.use(i18n.init);
 
 const loginController = new LoginController();
 const privadoController = new PrivadoController();

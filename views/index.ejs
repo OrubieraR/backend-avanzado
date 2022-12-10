@@ -11,7 +11,14 @@
 >
 
 <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
-<h1>Cabecera listado de anuncios.</h1>
-<a href="/anuncios">Ver el listado de anuncios</a>
+<h1>Cabecera listado de anuncios <%= title %></h1>
+<h2><%= __('Desde aquí podrás llegar a todos los anuncios disponibles.')%></h2>
+<a href="/anuncios"><%=__('Ver el listado de anuncios') %></a>
+
+<h3><%=__('Ejemplo de plurales con i18jn') %></h3>
+<p>0 <%= __n('Mouse',0) %></p>
+<p>1 <%= __n('Mouse',1) %></p>
+<p>2 <%= __n('Mouse',2) %></p>
+<p>3 <%= __n('Mouse',3) %></p>
 
 <%- include ('_footer') %>
