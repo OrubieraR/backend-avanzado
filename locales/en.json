@@ -6,9 +6,25 @@
 		"one": "Mouse",
 		"other": "Mice"
 	},
-	"Features": "Features",
-	"Privado": "Privado",
+	"Privado": "Private",
 	"Logout": "Logout",
 	"Login": "Login",
-	"Anuncios": "Anuncios"
+	"Anuncios": "Ads",
+	"Cabecera listado de anuncios": "Heading of ads list.",
+	"Página de anuncios Nodeapp. Todos los derechos reservados": "Nodeapp ads page. All Rights Reserved.",
+	"Privacy": "Privacy",
+	"Terms": "Terms",
+	"Lista de anuncios": "Ads list",
+	"Listando:": "Listing:",
+	"Nombre": "Name",
+	"Venta": "Sale",
+	"Precio": "Price",
+	"Foto": "Photo",
+	"Ejemplos:": "Examples:",
+	"Todos (max. 1000)": "All (max. 1000)",
+	"Paginado": "Paginated",
+	"Ordenado por precio ascendente": "Sort by ascending price",
+	"Ordenado por precio descendente": "Sort by descending price",
+	"Con tag mobile": "With mobile tag",
+	"Volver a la home": "Come back home"
 }

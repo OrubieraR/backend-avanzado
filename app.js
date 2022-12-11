@@ -40,9 +40,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-// Setup i18n
-app.use(i18n.init);
-
 const loginController = new LoginController();
 const privadoController = new PrivadoController();
 
@@ -67,11 +64,15 @@ app.use((req, res, next) => {
   next();
 });
 
+// Setup i18n. Así estarán dispobibles las propiedades en las vistas.
+app.use(i18n.init);
+
 /**
  * Website routes
  */
 app.use("/", require("./routes/index"));
 app.use("/anuncios", require("./routes/anuncios"));
+app.use("/change-locale", require("./routes/change-locale"));
 
 // Pasando estilos de controladores.
 app.get("/login", loginController.index);

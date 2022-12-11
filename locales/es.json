@@ -6,9 +6,25 @@
 		"one": "Ratón",
 		"other": "Ratones"
 	},
-	"Features": "Features",
 	"Privado": "Privado",
 	"Logout": "Logout",
 	"Login": "Login",
-	"Anuncios": "Anuncios"
+	"Anuncios": "Anuncios",
+	"Cabecera listado de anuncios": "Cabecera listado de anuncios",
+	"Página de anuncios Nodeapp. Todos los derechos reservados": "Página de anuncios Nodeapp. Todos los derechos reservados",
+	"Privacy": "Privacidad",
+	"Terms": "Términos",
+	"Lista de anuncios": "Lista de anuncios",
+	"Listando:": "Listando:",
+	"Nombre": "Nombre",
+	"Venta": "Venta",
+	"Precio": "Precio",
+	"Foto": "Foto",
+	"Ejemplos:": "Ejemplos:",
+	"Todos (max. 1000)": "Todos (max. 1000)",
+	"Paginado": "Paginado",
+	"Ordenado por precio ascendente": "Ordenado por precio ascendente",
+	"Ordenado por precio descendente": "Ordenado por precio descendente",
+	"Con tag mobile": "Con tag mobile",
+	"Volver a la home": "Volver a la home"
 }

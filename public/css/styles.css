@@ -369,6 +369,10 @@ th {
   border-width: 0;
 }
 
+.table-hover img {
+  max-width: 100px;
+}
+
 label {
   display: inline-block;
 }
