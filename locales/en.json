@@ -5,5 +5,10 @@
 	"Mouse": {
 		"one": "Mouse",
 		"other": "Mice"
-	}
+	},
+	"Features": "Features",
+	"Privado": "Privado",
+	"Logout": "Logout",
+	"Login": "Login",
+	"Anuncios": "Anuncios"
 }
