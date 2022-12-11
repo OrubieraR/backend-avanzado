@@ -25,6 +25,19 @@ cp .env.example .env
 
     npm run initDB
 
+    Two users were created
+    ````
+    {
+      "email": "admin@example.com",
+      "password": 1234
+    },
+    {
+      "email": "user1@@example.com.com",
+      "password": 1234
+    }
+
+```
+
 ## Start
 
 To start a single instance:
@@ -114,3 +127,9 @@ Return the list of available tags for the resource anuncios.
 ```
 
 ```
+
+```
+
+### Bootstrap theme based
+
+All the pages are using this template from https://startbootstrap.com/theme/new-age
