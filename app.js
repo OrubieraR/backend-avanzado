@@ -23,7 +23,8 @@ const app = express();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
+app.set("view engine", "html"); // Usar motor de vistas personalizado que se llama html.
+app.engine("html", require("ejs").__express); // Se indica que el motor que usa html es ejs. .__express es para usar un método de ejs, que es un middleware que se integra con express para renderizar las plantillas.
 
 /**
  * Global Template variables
