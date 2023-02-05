@@ -1,4 +1,4 @@
-#Práctica del curso devops. Despliege en servidores
+# Práctica del curso devops. Despliege en servidores
 
 The url´s are:
  - ec2-3-82-151-66.compute-1.amazonaws.com ===> Nodepop page (Backend node)
