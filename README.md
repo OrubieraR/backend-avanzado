@@ -1,3 +1,10 @@
+#Práctica del curso devops. Despliege en servidores
+
+The url´s are:
+ - ec2-3-82-151-66.compute-1.amazonaws.com ===> Nodepop page (Backend node)
+ - 3.82.151.66 ===> React
+
+
 # NodePop
 
 [Demo](/anuncios) of the methods (this link works only if you run the project)
